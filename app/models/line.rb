@@ -1,11 +1,6 @@
 class Line < ActiveRecord::Base
-  validates_presence_of :source_title, :content, :end_rhyme, allow_nil: false
   before_validation :update_end_rhyme, on: :create
-
-  def initialize(source_title, content)
-    @source_title = source_title
-    @content = content
-  end
+  validates_presence_of :source_title, :content, :end_rhyme, allow_nil: false
 
   private
 
